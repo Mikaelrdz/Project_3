@@ -1,0 +1,200 @@
+/* @import "../scss/bootstrap.scss"; */
+
+*::-webkit-scrollbar {
+  width: 8px;     /* Tamaño del scroll en vertical */
+  height: 8px;    /* Tamaño del scroll en horizontal */
+  /* display: none;  Ocultar scroll */
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--bs-gray-200);
+  border-radius: 4px;
+}
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+*::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:active {
+  background-color: var(--bs-gray-400);
+}
+
+[data-bs-theme="dark"] *::-webkit-scrollbar-thumb {
+  background: var(--bs-gray-800);
+}
+
+[data-bs-theme="dark"] *::-webkit-scrollbar-thumb:hover,
+[data-bs-theme="dark"] *::-webkit-scrollbar-thumb:active {
+  background: var(--bs-gray-600);
+}
+
+*::-webkit-scrollbar-track {
+  background: none;
+  border-radius: 4px;
+}
+
+/* Cambiamos el fondo cuando esté en active o hover */
+/* *::-webkit-scrollbar-track:hover,
+*::-webkit-scrollbar-track:active {
+background: #d4d4d4;
+} */
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.bs-divider {
+  width: 100%;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: solid rgba(0, 0, 0, 0.15);
+  border-width: 1px 0;
+  box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+    inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+}
+
+.bs-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+.btn-bd-primary {
+  --bd-violet-bg: #712cf9;
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #6528e0;
+  --bs-btn-hover-border-color: #6528e0;
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #5a23c8;
+  --bs-btn-active-border-color: #5a23c8;
+}
+
+.svg-img {
+  width: 16px;
+  height: 16px;
+}
+
+.bd-mode-toggle {
+  z-index: 1500;
+}
+
+.nav-pills {
+  --bs-nav-pills-link-active-color: #fff;
+  --bs-nav-pills-link-active-bg: #198754;
+}
+
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: #198754;
+}
+
+.tab-content {
+  display: none;
+}
+
+.btn-toggle {
+  justify-content: space-between;
+}
+
+.nav-link:hover:not(.active),
+.nav-link:focus:not(.active) {
+  background-color: var(--bs-gray-200);
+}
+
+[data-bs-theme="dark"] .nav-link:hover:not(.active),
+[data-bs-theme="dark"] .nav-link:focus:not(.active) {
+  background-color: var(--bs-gray-800);
+}
+
+.btn-toggle::after {
+  justify-content: flex-end;
+  line-height: 0;
+  margin-top: 0.25em;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 15l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform 0.35s ease;
+  transform-origin: 0.5em 50%;
+  transform: rotate(-90deg);
+}
+
+[data-bs-theme="dark"] .btn-toggle::after {
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%28255,255,255,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 15l6-6-6-6'/%3e%3c/svg%3e");
+}
+
+.btn-toggle[aria-expanded="true"]::after {
+  transform: rotate(90deg);
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  content: url("../media/MySSLogo.png");
+}
+
+[data-bs-theme="dark"] .logo-img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+@media (max-width: 575px) {
+  .logo-img {
+    content: url("../media/MySS.png");
+  }
+  .btn-toggle::after {
+    display: none;
+  }
+}
+
+.login a img {
+  height: 32px;
+  width: 32px;
+}
+
+.login-txt {
+  font-weight: bold;
+}
+
+.login[page-loged="false"] img {
+  content: url("../media/user.png");
+}
+
+[data-bs-theme="dark"] .login[page-loged="false"] img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+/* .login[page-loged="false"] .dropdown-toggle::after {
+  display: none;
+} */
+
+ul button[name^="nav"] {
+  min-height: 40px;
+}
+
+/* .login[page-loged="false"] .dropdown-menu {
+  display: none;
+} */
+
+/* .sidehead {
+  min-height: 68px;
+}
+.sidefeet {
+  min-height: 65px;
+} */
